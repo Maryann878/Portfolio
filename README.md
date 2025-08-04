@@ -53,7 +53,7 @@ Users can:
 ### Screenshot
 
 #### Light Theme
-![View Screenshot](docs/assets/images/portfolio_screenshot.png)
+![View Screenshot](/assets/images/portfolio_screenshot.png)
 
 
 ---
