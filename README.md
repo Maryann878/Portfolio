@@ -47,8 +47,7 @@ Users can:
 ---
 
 ## Live Preview
-[View Project](https://maryann878.github.io/portfolio/)
-
+[View Project](https://maryann878.github.io/Portfolio/)
 ---
 
 ### Screenshot
@@ -56,7 +55,7 @@ Users can:
 #### Light Theme
 ![View Screenshot](docs/assets/images/portfolio_screenshot.png)
 
-![View Screenshot](docs/assets/images/portfolio_screenshot2.png)
+
 ---
 
 ## Built with
