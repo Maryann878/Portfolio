@@ -233,9 +233,9 @@ body.dark .section {
   height: 70%;
   padding: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-padding-left: 1rem;
-padding-right: 1rem;}
-
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 
 .project-card:hover {
   transform: scale(1.02);
@@ -279,7 +279,7 @@ padding-right: 1rem;}
   color: inherit;
   display: block;
   cursor: pointer;
-  outline: none; 
+  outline: none;
 }
 
 .no-style-link:focus {
@@ -328,12 +328,11 @@ padding-right: 1rem;}
   opacity: 1;
 }
 
-
 /* ========== Skills ========== */
 
 .skill {
-  background-color: var(--accent); 
-  color: var(--bg-light); 
+  background-color: var(--accent);
+  color: var(--bg-light);
   padding: 0.4rem 0.8rem;
   border-radius: 9999px;
   font-size: 0.875rem;
@@ -565,10 +564,13 @@ body.dark .skill {
   padding: 1.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, background-color 0.3s ease;
+  overflow: hidden;
+  max-height: 5.5rem;
 }
 
 .interests-box:hover {
   transform: translateY(-4px);
+  max-height: 400px;
 }
 
 .interests-box h3 {
@@ -581,14 +583,20 @@ body.dark .skill {
   list-style: none;
   padding-left: 0;
   margin: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.interests-box:hover .interests-list {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .interests-list li {
   margin-bottom: 0.6rem;
   font-size: 0.95rem;
   color: var(--text-light);
-  position: relative;
-  cursor: default;
 }
 
 body.dark .interests-box,
@@ -599,40 +607,6 @@ body.dark .interests-box h3 {
 
 body.dark .interests-list li {
   color: var(--text-dark);
-}
-
-/* ==================== Hover Group Expand/Collapse ==================== */
-.hover-group {
-  position: relative;
-}
-
-.hover-target {
-  overflow: hidden;
-  max-height: 300px;
-  transition: all 0.4s ease;
-  flex: 1 1 300px;
-}
-
-.hover-group:hover .hover-target {
-  max-height: 3.2rem;
-  cursor: pointer;
-}
-
-.hover-target:hover {
-  max-height: 1000px;
-}
-
-.hover-target ul {
-  opacity: 0;
-  max-height: 0;
-  pointer-events: none;
-  transition: all 0.3s ease;
-}
-
-.hover-target:hover ul {
-  opacity: 1;
-  max-height: 400px;
-  pointer-events: auto;
 }
 
 /* ==================== Project Status Labels ==================== */
@@ -711,10 +685,9 @@ body.dark .interests-list li {
   flex-direction: column;
   gap: 2rem;
   margin-top: 1.5rem;
-    border: 5px solid rgba(59, 130, 246, 0.3);
-padding: 20px;
+  border: 5px solid rgba(59, 130, 246, 0.3);
+  padding: 20px;
 }
-
 
 .contact-form,
 .direct-contact {
@@ -785,8 +758,6 @@ padding: 20px;
   text-decoration: underline;
 }
 
-
-
 /* ==================== Footer ==================== */
 footer {
   text-align: center;
@@ -854,58 +825,58 @@ footer {
   }
   .contact-wrapper {
     flex-direction: row;
-}
-
-@media (min-width: 900px) {
-  nav ul {
-    gap: 2rem;
   }
 
-  .project-grid {
-    grid-template-columns: repeat(3, 1fr);
+  @media (min-width: 900px) {
+    nav ul {
+      gap: 2rem;
+    }
+
+    .project-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
-}
 
-/* ==================== Dark Mode Overrides ==================== */
-#theme-toggle:checked ~ .page-content {
-  --bg-color: var(--bg-dark);
-  --text-color: var(--text-dark);
-  --card-bg: var(--card-bg-dark);
-  --footer-bg: var(--footer-bg-dark);
-  background-color: var(--bg-dark);
-  color: var(--text-dark);
-}
-
-#theme-toggle:checked ~ .page-content .section {
-  background-color: var(--card-bg-dark);
-  color: var(--text-dark);
-}
-
-#theme-toggle:checked ~ .page-content header {
-  background-color: var(--bg-dark);
-  color: var(--text-dark);
-}
-
-#theme-toggle:checked ~ .page-content footer {
-  background-color: var(--footer-bg-dark);
-  color: var(--text-dark);
-}
-
-/* Auto dark mode support (based on user preference) */
-@media (prefers-color-scheme: dark) {
-  body {
+  /* ==================== Dark Mode Overrides ==================== */
+  #theme-toggle:checked ~ .page-content {
+    --bg-color: var(--bg-dark);
+    --text-color: var(--text-dark);
+    --card-bg: var(--card-bg-dark);
+    --footer-bg: var(--footer-bg-dark);
     background-color: var(--bg-dark);
     color: var(--text-dark);
   }
 
-  .section {
+  #theme-toggle:checked ~ .page-content .section {
     background-color: var(--card-bg-dark);
+    color: var(--text-dark);
   }
 
-  header,
-  footer {
+  #theme-toggle:checked ~ .page-content header {
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
+  }
+
+  #theme-toggle:checked ~ .page-content footer {
     background-color: var(--footer-bg-dark);
     color: var(--text-dark);
   }
-}
+
+  /* Auto dark mode support (based on user preference) */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-dark);
+    }
+
+    .section {
+      background-color: var(--card-bg-dark);
+    }
+
+    header,
+    footer {
+      background-color: var(--footer-bg-dark);
+      color: var(--text-dark);
+    }
+  }
 }
