@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio of MaryAnn Nwagor - Frontend Developer"
+    />
+    <title>MaryAnn Nwagor | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="portfolio.css" />
+  </head>
+  <body>
+    <!-- ========== Theme Toggle ========== -->
+    <input type="checkbox" id="theme-toggle" hidden />
+    <label
+      for="theme-toggle"
+      class="theme-toggle"
+      aria-label="Toggle theme"
+    ></label>
+    <div class="page-content">
+      <div class="container">
+        <!-- ========== Header & Navigation ========== -->
+        <header>
+          <nav>
+            <ul>
+              <li><a href="#about">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#education">Education</a></li>
+              <li><a href="#interests">Interests</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+        </header>
+
+        <!-- ========== Hero Section ========== -->
+        <section class="hero">
+          <div class="hero-content">
+            <img
+              src="./assets/images/profile_img.jpeg"
+              alt="Portrait of Maya"
+              class="hero-image"
+            />
+            <h1>MaryAnn Nwagor</h1>
+            <h2 class="role">Frontend Developer &amp; Security Enthusiast</h2>
+            <p class="tagline">
+              Building secure, beautiful, and impactful web experiences.
+            </p>
+            <a href="./assets/CV_Maryann.pdf" class="cv-download-btn" download
+              >Download CV</a
+            >
+            <a
+              href="./assets/CV_Maryann.pdf"
+              target="_blank"
+              class="btn view-btn"
+              >View CV</a
+            >
+          </div>
+        </section>
+        <!-- ========== About Section ========== -->
+        <section id="about" class="section">
+          <h2>About Me</h2>
+          <p>
+            I’m Maryann, a passionate and detail-oriented frontend developer in
+            training under the Power Learn Project. With a background in
+            education and a growing skillset in cybersecurity, I approach
+            development with creativity, structure, and security awareness in
+            mind. I enjoy building user-friendly, purpose-driven websites that
+            are not only beautiful but also secure and accessible.
+            <br />
+            <br />
+            Driven by curiosity and a desire to solve real-world problems, I’m
+            constantly learning and refining my craft. I am currently open to
+            frontend roles, cybersecurity internships, or freelance web
+            projects.
+          </p>
+        </section>
+        <!-- ========== Skills Section ========== -->
+        <section id="skills" class="section">
+          <h2>Skills</h2>
+          <div class="skills-wrapper skills-group">
+            <div class="skill-container hover-target">
+              <h3>Programming Languages</h3>
+              <div class="skills-grid">
+                <div
+                  class="skill"
+                  data-tooltip="Experienced with HTML5 Semantics"
+                >
+                  HTML
+                </div>
+                <div
+                  class="skill"
+                  data-tooltip="Comfortable with Flexbox & Grid"
+                >
+                  CSS
+                </div>
+                <div class="skill" data-tooltip="Skilled in Python scripting">
+                  Python
+                </div>
+                <div
+                  class="skill"
+                  data-tooltip="Proficient in JavaScript fundamentals"
+                >
+                  JavaScript
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-container hover-target">
+              <h3>Tools &amp; Platforms</h3>
+              <div class="skills-grid">
+                <div
+                  class="skill"
+                  data-tooltip="Version control and collaboration"
+                >
+                  Git & GitHub
+                </div>
+                <div class="skill">Canva</div>
+                <div class="skill">Google Workspace</div>
+                <div class="skill">Microsoft Word</div>
+              </div>
+            </div>
+
+            <div class="skill-container hover-target">
+              <h3>Practices | Soft Skills</h3>
+              <div class="skills-grid">
+                <div class="skill">Responsive Web Design</div>
+                <div class="skill" data-tooltip="Writing secure and clean code">
+                  Secure coding practices
+                </div>
+                <div
+                  class="skill"
+                  data-tooltip="Documenting code and writing blog posts"
+                >
+                  Technical Writing
+                </div>
+                <div class="skill">Project Management</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== Education Section ========== -->
+        <section id="education" class="section">
+          <h2>Education</h2>
+
+          <div class="edu-wrapper">
+            <!-- Academic Background -->
+            <div class="edu-box">
+              <h3>Academic Background</h3>
+              <div class="timeline">
+                <div class="timeline-item">
+                  <h4>M.Ed, Educational Management</h4>
+                  <p>University of Benin – 2018–2021</p>
+                </div>
+                <div class="timeline-item">
+                  <h4>B.Ed, Religions</h4>
+                  <p>University of Benin – 2011–2015</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="cert-box">
+              <h3>Certifications</h3>
+              <ul class="cert-list">
+                <li>Cybersecurity – Tecvinson Academy (2025)</li>
+                <li>Responsive Web Design – freeCodeCamp (2023)</li>
+
+                <li>Web Application Testing – CyberSafe Foundation (2022)</li>
+              </ul>
+            </div>
+
+            <!-- Tech Journey -->
+            <div class="journey-box">
+              <h3>My Tech Journey</h3>
+              <p>
+                My path into tech wasn’t traditional—but it was intentional.
+                With a background in education and a passion for creativity, I
+                began exploring web development in 2022. What started as
+                curiosity quickly became a calling.
+              </p>
+              <p>
+                I taught myself HTML, CSS, and JavaScript through online
+                platforms and late-night coding sessions. Each project I built
+                was a step forward, each bug a lesson. Today, I’m focused on
+                frontend development, blending design and logic to create
+                meaningful digital experiences.
+              </p>
+              <p>
+                I believe that learning is lifelong—and tech is the perfect
+                playground for it.
+              </p>
+            </div>
+          </div>
+
+          <!-- Motivational Quote -->
+          <div class="edu-quote">
+            <p>“Learning never exhausts the mind.” – Leonardo da Vinci</p>
+          </div>
+        </section>
+
+        <!-- ========== Interests Section ========== -->
+        <section id="interests" class="section">
+          <h2>Interests</h2>
+          <div class="interests-containers hover-group">
+            <!-- Tech Interests -->
+            <div class="interests-box hover-target">
+              <h3>💻 Tech Interests</h3>
+              <ul class="interests-list">
+                <li>Web Development</li>
+                <li>Cybersecurity</li>
+                <li>AI</li>
+              </ul>
+            </div>
+
+            <!-- Professional Interests -->
+            <div class="interests-box hover-target">
+              <h3>🎓 Professional Interests</h3>
+              <ul class="interests-list">
+                <li>Teaching</li>
+                <li>Women in Tech Advocacy</li>
+              </ul>
+            </div>
+
+            <!-- Personal Interests -->
+            <div class="interests-box hover-target">
+              <h3>🌟Personal Interests</h3>
+              <ul class="interests-list">
+                <li>Reading & Research</li>
+                <li>Music</li>
+                <li>Poetry & Writing</li>
+                <li>Travelling</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== Projects Section ========== -->
+        <section id="projects" class="section">
+          <h2>Projects</h2>
+          <div class="project-grid">
+            <div class="project-card">
+              <a
+                href="https://github.com/Maryann878/bootcamp_manager/tree/main"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="no-style-link tooltip"
+                data-tooltip="Click to view on github"
+              >
+                <h3>Bootcamp Manager</h3>
+                <span class="project-status completed">Completed</span>
+                <p>
+                  A CLI based admin system built to track students, instructors,
+                  and courses in a bootcamp environment.
+                </p>
+
+                <div class="project-image-wrapper hover-target">
+                  <img
+                    src="assets/images/bootcamp_screenshot.png"
+                    alt="Bootcamp App Screenshot"
+                  />
+                </div>
+              </a>
+            </div>
+            <div class="project-card">
+              <a
+                href="https://maryann878.github.io/browser-extension-manager-UI/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="no-style-link tooltip"
+                data-tooltip="Click to view Live Site"
+              >
+                <h3>Browser Estension Manager</h3>
+                <span class="project-status completed">Completed</span>
+                <p>
+                  This is a sleek and responsive user interface for managing
+                  browser extensions.
+                </p>
+
+                <div class="project-image-wrapper hover-target">
+                  <img
+                    src="assets/images/browser_extention_manager.png"
+                    alt="Bootcamp Extention Manager screenshot"
+                  />
+                </div>
+              </a>
+            </div>
+            <div class="project-card">
+              <a
+                href="https://github.com/Maryann878/python-practice-projects/tree/main/calculator_app"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="no-style-link tooltip"
+                data-tooltip="Click to view on github"
+                ><h3>Calculator App</h3>
+                <span class="project-status completed">Completed</span>
+                <p>
+                  A beginner-friendly calculator that performs basic arithmetic
+                  operations: add, subtract, multiply, divide.
+                </p>
+
+                <div class="project-image-wrapper hover-target">
+                  <img
+                    src="assets/images/calculator_screenshot.png"
+                    alt="Calculator Screenshot"
+                    loading="lazy"
+                  />
+                </div>
+              </a>
+            </div>
+
+            <div class="project-card">
+              <a
+                href="https://github.com/Maryann878/python-practice-projects/tree/main/random_joke_generator"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="no-style-link tooltip"
+                data-tooltip="Click to view on github"
+                ><h3>Random Joke App</h3>
+                <span class="project-status completed">Completed</span>
+                <p>
+                  A fun Python script that gives you a random joke every time
+                  you run it.
+                </p>
+
+                <div class="project-image-wrapper hover-target">
+                  <img
+                    src="assets/images/joke_app_screenshot.png"
+                    alt="Random Joke App Screenshot"
+                    loading="lazy"
+                  />
+                </div>
+              </a>
+            </div>
+            <div class="project-card">
+              <a
+                href="https://github.com/Maryann878/python-practice-projects/tree/main/personalized_greeting_app"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="no-style-link tooltip"
+                data-tooltip="Click to view on github"
+              >
+                <h3>Greeting App</h3>
+                <span class="project-status completed">Completed</span>
+                <p>
+                  A simple Python CLI app that displays a pesonalized greeting.
+                </p>
+
+                <div class="project-image-wrapper hover-target">
+                  <img
+                    src="assets/images/greeting_app_screenshot.png"
+                    alt="Greeting App Screenshot"
+                    loading="lazy"
+                  />
+                </div>
+              </a>
+            </div>
+
+            <div class="project-card">
+              <a
+                href="https://github.com/Maryann878/python-practice-projects/tree/main/todo_app"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="no-style-link tooltip"
+                data-tooltip="Click to view on github"
+              >
+                <h3>To-Do App</h3>
+                <span class="project-status ongoing">Ongoing</span>
+                <p>
+                  A basic productivity tool to manage daily tasks with clean
+                  layout and responsive design.
+                </p>
+
+                <div class="project-image-wrapper hover-target">
+                  <img
+                    src="assets/images/todo_app_screenshot.png"
+                    alt="To-Do App Screenshot"
+                    loading="lazy"
+                  />
+                </div>
+              </a>
+            </div>
+
+            <div class="project-card">
+              <a
+                href="#"
+                aria-disabled="true"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="no-style-link tooltip"
+                data-tooltip="Project is private"
+              >
+                <h3>BioAuth Pro</h3>
+                <span class="project-status ongoing">Ongoing</span>
+                <p>
+                  A platform for real-time face recognition and ID verification
+                  via smartphone or browser.
+                </p>
+
+                <div class="project-image-wrapper hover-target">
+                  <img
+                    src="assets/images/bioAuth_Pro.png"
+                    alt="BioAuth Pro Screenshot"
+                    loading="lazy"
+                  />
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- ========== Contact Section ========== -->
+        <section id="contact" class="section">
+          <h2>Contact Me</h2>
+          <div class="contact-wrapper">
+            <form
+              action="https://formspree.io/f/your-id"
+              method="POST"
+              class="contact-form"
+            >
+              <input type="text" name="name" placeholder="Your Name" required />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+                pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+              />
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Your Message"
+              ></textarea>
+              <button type="submit">Send Message</button>
+            </form>
+
+            <div class="direct-contact">
+              <h3>Reach me directly:</h3>
+              <ul>
+                <li>
+                  Email:
+                  <a href="mailto:maryannnwagor@gmail.com"
+                    >maryannnwagor@gmail.com</a
+                  >
+                </li>
+                <li>
+                  LinkedIn:
+                  <a href="https://linkedin.com/in/maryann-nwagor"
+                    >linkedin.com/in/maryann-nwagor</a
+                  >
+                </li>
+                <li>
+                  GitHub:
+                  <a href="https://github.com/maryann878"
+                    >github.com/maryann878</a
+                  >
+                </li>
+                <li>Phone: <a href="#">+2348163684000</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <div class="wave-divider"></div>
+
+        <!-- ========== Footer ========== -->
+        <footer>
+          <p>
+            &copy; 2025 Maryann Nwagor. Coded with 💻, fueled by ☕, and styled
+            with ❤️ — all in HTML & CSS.
+          </p>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
