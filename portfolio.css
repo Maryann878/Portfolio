@@ -113,16 +113,19 @@ header {
 nav ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.5rem; /* Smaller gaps on mobile */
   justify-content: center;
+  padding: 0 1rem; /* Add padding for mobile */
 }
 
 nav a {
   position: relative;
   text-decoration: none;
   color: var(--accent);
-  padding-bottom: 2px;
-  transition: color 0.3s ease;
+  padding: 0.5rem 0.8rem; /* Better touch targets */
+  font-size: 0.85rem; /* Slightly smaller on mobile */
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
 
 nav a::after {
@@ -143,13 +146,14 @@ nav a:hover::after {
 /* ==================== Hero Section ==================== */
 .hero {
   text-align: center;
-  padding: 2rem;
+  padding: 1.5rem 1rem; /* Less padding on mobile */
   transition: background-color 0.3s ease, color 0.3s ease;
+  background: linear-gradient(135deg, #f1f5f9, #ffffff);
 }
 
 .hero-image {
-  width: 220px;
-  height: 220px;
+  width: 180px; /* Smaller on mobile */
+  height: 180px;
   object-fit: cover;
   border-radius: 50%;
   margin: 1rem auto;
@@ -177,9 +181,9 @@ nav a:hover::after {
 .cv-download-btn,
 .view-btn,
 button {
-  display: inline-block;
-  margin: 1rem 0.5rem;
-  padding: 0.6rem 1.2rem;
+  display: block; /* Stack vertically on mobile */
+  margin: 0.5rem auto; /* Center and smaller margins */
+  padding: 0.8rem 1.5rem; /* Bigger touch targets */
   background: var(--accent);
   color: #fff;
   border: none;
@@ -189,7 +193,9 @@ button {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   transition: background 0.3s ease;
-  cursor: pointer;
+  width: 100%; /* Full width on mobile */
+  max-width: 250px; /* But not too wide */
+  text-align: center;
 }
 button:focus,
 a:focus,
@@ -231,17 +237,18 @@ body.dark .section {
 /* ==================== Projects Section ==================== */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: 1fr; /* Single column on mobile */
+  gap: 1.5rem;
   margin-top: 1rem;
 }
 
 .project-card {
-  border: 5px solid rgba(59, 130, 246, 0.3);
+  border: 2px solid rgba(59, 130, 246, 0.3);
   border-radius: 0.75rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  padding: 1rem;
+  padding: 1.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: var(--card-bg);
 }
 
 .project-card:hover {
@@ -272,9 +279,9 @@ body.dark .section {
   border-radius: 10px;
   margin-top: 1rem;
   position: relative;
-  opacity: 0;
-  max-height: 0;
-  transition: opacity 0.3s ease;
+  opacity: 1; /* Always visible on mobile */
+  max-height: 200px; /* Set reasonable height on mobile */
+  transition: all 0.3s ease;
 }
 
 .project-card:hover .project-image-wrapper {
@@ -348,21 +355,20 @@ body.dark .section {
 }
 
 .skills-wrapper {
-  display: flex;
-  flex-wrap: wrap;
+ display: flex;
+  flex-direction: column; /* Mobile first - stack vertically */
   gap: 1rem;
   margin-top: 1rem;
-  justify-content: space-between;
 }
 
 .skills-group {
   display: flex;
+  flex-direction: column; /* Mobile first - stack vertically */
   gap: 1rem;
-  flex-wrap: wrap;
 }
 
 .skill-container {
-  flex: 1 1 300px;
+  flex: 1;
   background-color: var(--card-bg);
   border: 2px solid rgba(59, 130, 246, 0.3);
   border-radius: 8px;
@@ -371,6 +377,7 @@ body.dark .section {
   transition: transform 0.3s ease;
   cursor: pointer;
   overflow: hidden;
+  min-height: auto;
 }
 
 .skill-container:hover {
@@ -381,15 +388,15 @@ body.dark .section {
 }
 
 .skill-container .skills-grid {
-  opacity: 0;
-  max-height: 0;
+  opacity: 1; /* Always visible on mobile */
+  max-height: none; /* No height restrictions on mobile */
   transition: all 0.4s ease;
-  pointer-events: none;
+  pointer-events: auto; /* Always interactive on mobile */
 }
-.skill-container:hover .skills-grid {
-  opacity: 1;
-  max-height: 200px;
-  pointer-events: auto;
+.skill-container:hover {
+  transform: translateY(-2px); /* Less dramatic on mobile */
+  border-color: var(--accent);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .skills-grid {
@@ -401,17 +408,16 @@ body.dark .section {
 
 /* Hover expand effect */
 .skills-group:hover .hover-target {
-  flex: 0.9;
-  opacity: 0.7;
-  transform: scale(0.98);
+  flex: 1; /* Keep normal size on mobile */
+  opacity: 1; /* Keep full opacity */
+  transform: none; /* No scaling on mobile */
 }
 
 .skills-group:hover .hover-target:hover {
-  flex: 2;
+  flex: 1; /* Keep normal size */
   opacity: 1;
-  transform: scale(1.03);
+  transform: translateY(-2px); /* Just a small lift */
   z-index: 1;
-  /* color: var(--accent-dark); */
 }
 
 /* tooltip */
@@ -450,21 +456,22 @@ body.dark .skill {
 /*=========== Education Section Layout ========== */
 
 .edu-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
+ display: flex;
+  flex-direction: column; /* Stack on mobile */
+  gap: 1.5rem;
   margin-top: 1.5rem;
 }
 
 .edu-box,
 .cert-box,
 .journey-box {
-  flex: 1 1 45%;
+  flex: 1;
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease;
   border: 2px solid rgba(59, 130, 246, 0.3);
+  background: var(--card-bg);
 }
 
 .edu-box:hover,
@@ -502,7 +509,7 @@ body.dark .skill {
 }
 
 .cert-list li::before {
-  content: "✔";
+  content: "➤";
   position: absolute;
   left: 0;
   color: var(--accent);
@@ -551,31 +558,27 @@ body.dark .skill {
 /* ==================== Interests Section ==================== */
 .interests-containers {
   display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  gap: 1rem;
+  flex-direction: column; 
   margin-top: 1.5rem;
 }
 
 .interests-box {
-  flex: 1 1 300px;
-  background-color: var(--bg-light);
+  flex: 1;
+  background-color: var(--card-bg);
   border-radius: 1rem;
   border: 2px solid rgba(59, 130, 246, 0.3);
   padding: 1.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  transition: max-height 0.5s ease-in-out;
-  overflow: hidden;
-  max-height: 5.5rem;
-  color: var(--accent-dark);
+  transition: all 0.3s ease;
 }
+
 .interests-box.expanded {
   max-height: 1000px;
 }
 
 .interests-box:hover {
   transform: translateY(-4px);
-  max-height: 400px;
   border: 2px solid var(--accent-dark);
 }
 
@@ -587,35 +590,33 @@ body.dark .skill {
 }
 
 .interests-list {
-  list-style: none;
-  padding-left: 0;
+   list-style: none;
+  padding-left: 0px;
   margin: 0;
-  opacity: 0;
+  opacity: 1; /* Always visible on mobile */
   transition: opacity 0.3s ease;
-  pointer-events: none;
+  pointer-events: auto; /* Always interactive */
 }
 
-.interests-box:hover .interests-list {
-  opacity: 1;
-  pointer-events: auto;
+.interests-box:hover{
+   transform: translateY(-2px); /* Gentler on mobile */
+  max-height: none; /* No restrictions */
 }
 
 .interests-list li {
   margin-bottom: 0.6rem;
   font-size: 1rem;
   color: var(--text-light);
+
 }
 
-body.dark .interests-box,
-body.dark .interests-box h3 {
-  background-color: var(--bg-dark);
-  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
-  color: var(--text-dark);
+.interests-list li::before {
+  content: "➤";
+  color: var(--accent);
+  margin-right: 0.5rem;
+  font-weight: bold;
 }
 
-body.dark .interests-list li {
-  color: var(--text-dark);
-}
 
 /* ==================== Project Status Labels ==================== */
 .project-status {
@@ -642,7 +643,6 @@ body.dark .interests-list li {
 .contact-form {
   background-color: var(--card-bg, #ffffff);
   padding: 2rem;
-  border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
@@ -650,6 +650,9 @@ body.dark .interests-list li {
   transition: box-shadow 0.3s ease;
 }
 
+#contact h2{
+  padding: 0.01rem;
+}
 .contact-form:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
   border: 2px solid var(--accent);
@@ -665,7 +668,7 @@ body.dark .interests-list li {
   font-family: inherit;
   background-color: var(--bg-light, #f8fafc);
   transition: border 0.3s ease, box-shadow 0.3s ease;
-  outline: none;
+  outline: text;
   border: none;
 }
 
@@ -694,10 +697,12 @@ body.dark .interests-list li {
 
 .contact-wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
   gap: 2rem;
   margin-top: 1.5rem;
-  padding: 20px;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  padding: 1rem; 
+  border-radius: 8px;
 }
 
 .contact-form,
@@ -705,7 +710,7 @@ body.dark .interests-list li {
   flex: 1;
   padding: 1rem;
   background-color: var(--card-bg);
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
   border: 2px solid rgba(59, 130, 246, 0.3);
 }
@@ -713,7 +718,6 @@ body.dark .interests-list li {
 .direct-contact {
   background-color: var(--card-bg, #ffffff);
   padding: 2rem 1.5rem;
-  border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   font-size: 0.95rem;
@@ -783,21 +787,24 @@ footer {
 /* ==================== Theme Toggle ==================== */
 .theme-toggle {
   position: fixed;
-  top: 0.7rem;
+  top: 1rem;
   right: 1rem;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
+  width: 20px; 
+  height: 8px; 
+  border-radius: 50px;
   background: #facc15;
-  box-shadow: 0 0 0 0px #facc15;
-  transition: transform 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2000;
   user-select: none;
-  caret-color: transparent;
+  font-size: 0.9rem; 
+  min-width: 44px;
+  min-height: 44px;
+  visibility: hidden;
 }
 
 .theme-toggle:active {
@@ -814,16 +821,132 @@ footer {
 
 /* ==================== Decorative Divider ==================== */
 .wave-divider {
-  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
-  height: 80px;
-  clip-path: polygon(0 40%, 25% 0, 75% 100%, 100% 40%, 100% 100%, 0 100%);
+  height: 120px;
+  background-color: var(--accent);
+  clip-path: polygon(
+    0% 100%, 0% 50%, 
+    10% 60%, 20% 50%, 
+    30% 60%, 40% 50%, 
+    50% 60%, 60% 50%, 
+    70% 60%, 80% 50%, 
+    90% 60%, 100% 50%, 
+    100% 100%
+  );
+  animation: floatWave 3s ease-in-out infinite;
 }
+@keyframes floatWave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+
 
 /* ==================== Responsive Media Queries ==================== */
 @media (min-width: 600px) {
+  .skills-group {
+    flex-direction: row;
+  }
+  
+  .skill-container {
+    flex: 1 1 300px;
+    overflow: hidden;
+  }
+
+  .skill-container .skills-grid {
+    opacity: 0;
+    max-height: 0;
+    pointer-events: none;
+  }
+
+  .skill-container:hover .skills-grid {
+    opacity: 1;
+    max-height: 200px;
+    pointer-events: auto;
+  }
+
+  .interests-containers {
+    flex-direction: row;
+        justify-content: space-between;
+
+  }
+
+  .interests-box {
+    max-height: 5.5rem; /* Restore hover effect */
+  }
+
+  .interests-list {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .interests-box:hover {
+    max-height: 400px;
+  }
+
+.interests-box:hover .interests-list {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+.section h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  text-align: start;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+
+
+
   .project-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+.project-image-wrapper {
+    opacity: 0;
+    max-height: 0;
+  }
+
+  .project-card:hover .project-image-wrapper {
+    opacity: 1;
+    max-height: 300px;
+  }
+
+  .cv-download-btn,
+  .view-btn {
+    display: inline-block;
+    width: auto;
+    margin: 1rem 0.5rem;
+  }
+
+  .contact-wrapper {
+    flex-direction: row;
+      padding: 1rem; 
+
+       border: 2px solid rgba(59, 130, 246, 0.3);
+  }
+
+ 
+  .edu-wrapper {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .edu-box,
+  .cert-box {
+    flex: 1 1 45%;
+  }
+  
+  .journey-box {
+    flex: 1 1 100%;
+  }
+
+
 
   h1 {
     font-size: 1.8rem;
@@ -840,6 +963,13 @@ footer {
     flex-direction: row;
   }
 
+  .theme-toggle {
+    width: 40px;
+    height: 22px;
+    font-size: 1rem;
+    visibility: visible;
+  }
+
   @media (min-width: 900px) {
     nav ul {
       gap: 2rem;
@@ -847,7 +977,29 @@ footer {
 
     .project-grid {
       grid-template-columns: repeat(3, 1fr);
-    }
+  }
+
+  .project-card{
+      border: 3px solid rgba(59, 130, 246, 0.3);
+  }
+    .hero-image {
+    width: 220px;
+    height: 220px;
+  }
+  
+  .hero {
+    padding: 2rem;
+  }
+  
+  .theme-toggle {
+    width: 40px;
+    height: 32px;
+    font-size: 1rem;
+    visibility: visible;
+  bottom: 3px;
+  }
+  
+
   }
 
   /* ==================== Dark Mode Overrides ==================== */
@@ -860,6 +1012,10 @@ footer {
     color: var(--text-dark);
   }
 
+  #theme-toggle:checked ~ .page-content .hero {
+  background: linear-gradient(135deg, var(--bg-dark), var(--card-bg-dark));
+}
+
   #theme-toggle:checked ~ .page-content .section {
     background-color: var(--card-bg-dark);
     color: var(--text-dark);
@@ -869,6 +1025,55 @@ footer {
     background-color: var(--bg-dark);
     color: var(--text-dark);
   }
+
+  #theme-toggle:checked ~ .page-content .skill-container {
+  background-color: var(--card-bg-dark);
+  color: var(--text-dark);
+}
+
+#theme-toggle:checked ~ .page-content .interests-box {
+  background-color: var(--card-bg-dark) ;
+  color: var(--text-dark);
+  border-color: rgba(59, 130, 246, 0.4);
+}
+
+#theme-toggle:checked ~ .page-content .interests-box h3 {
+  color: var(--text-dark) ;
+}
+
+#theme-toggle:checked ~ .page-content .interests-list li {
+  color: var(--text-secondary-dark);
+}
+
+
+#theme-toggle:checked ~ .page-content .project-card {
+  background-color: var(--card-bg-dark);
+  color: var(--text-dark);
+}
+
+#theme-toggle:checked ~ .page-content .edu-box,
+#theme-toggle:checked ~ .page-content .cert-box,
+#theme-toggle:checked ~ .page-content .journey-box {
+  background-color: var(--card-bg-dark);
+  color: var(--text-dark);
+}
+
+#theme-toggle:checked ~ .page-content .contact-form input:focus,
+.contact-form textarea:focus{
+  border-bottom: 5px solid var(--accent);
+}
+
+#theme-toggle:checked + .theme-toggle {
+  background: #1e293b;
+}
+
+#theme-toggle:not(:checked) + .theme-toggle::before {
+  content: "🌞";
+}
+
+#theme-toggle:checked + .theme-toggle::before {
+  content: "🌙";
+}
 
   #theme-toggle:checked ~ .page-content footer {
     background-color: var(--footer-bg-dark);
@@ -884,6 +1089,10 @@ footer {
 
     .section {
       background-color: var(--card-bg-dark);
+    }
+
+    .theme-toggle{
+      visibility: visible;
     }
 
     header,
