@@ -1081,7 +1081,7 @@ footer {
   }
 
   /* Auto dark mode support (based on user preference) */
-  /* @media (prefers-color-scheme: dark) {
+  @media (prefers-color-scheme: dark) {
     body {
       background-color: var(--bg-dark);
       color: var(--text-dark);
@@ -1100,5 +1100,5 @@ footer {
       background-color: var(--footer-bg-dark);
       color: var(--text-dark);
     }
-  } */
+  }
 }
